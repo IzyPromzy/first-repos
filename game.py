@@ -9,7 +9,7 @@ pygame.init()
 try:
     pygame.mixer.init()
     mixer_ready = True
-except pygame.error:
+except pygame.error: 
     mixer_ready = False
 
 WINDOW_WIDTH = 960
@@ -17,7 +17,7 @@ WINDOW_HEIGHT = 680
 BOARD_WIDTH = 600
 BOARD_HEIGHT = 400
 CELL_SIZE = 10
-BOARD_X = 42
+BOARD_X = 45
 BOARD_Y = 190
 PANEL_X = 682
 PANEL_WIDTH = 236
@@ -84,7 +84,7 @@ def draw_text(text, font, color, position, centered=False):
     return rect
 
 
-def draw_card(rect, color=SURFACE, radius=18, border=None):
+def draw_card(rect, color=SURFACE, radius=20, border=None):
     pygame.draw.rect(display, color, rect, border_radius=radius)
     if border:
         pygame.draw.rect(display, border, rect, width=1, border_radius=radius)
@@ -114,7 +114,7 @@ def draw_board(snake, food):
         display,
         BOARD_COLOR,
         (BOARD_X, BOARD_Y, BOARD_WIDTH, BOARD_HEIGHT),
-        border_radius=10,
+        border_radius=16,
     )
 
     for x in range(0, BOARD_WIDTH + 1, CELL_SIZE * 2):
